@@ -1,0 +1,9 @@
+{
+  "parent": "minecraft:block/slab",
+  "textures": {
+    "bottom": "paintedplanks:block/white_planks",
+    "side": "paintedplanks:block/white_planks",
+    "top": "paintedplanks:block/white_planks",
+    "render_type": "cutout"
+  }
+}
