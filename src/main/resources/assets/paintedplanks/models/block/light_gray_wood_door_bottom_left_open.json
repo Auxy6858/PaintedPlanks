@@ -1,0 +1,8 @@
+{
+  "render_type": "minecraft:cutout",
+  "parent": "minecraft:block/door_bottom_left_open",
+  "textures": {
+    "bottom": "paintedplanks:block/light_gray_wood_door_bottom",
+    "top": "paintedplanks:block/light_gray_wood_door_top"
+  }
+}

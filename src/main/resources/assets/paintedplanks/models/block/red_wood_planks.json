@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "paintedplanks:block/red_wood_planks"
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/inner_stairs",
+  "textures": {
+    "bottom": "paintedplanks:block/lime_wood_planks",
+    "side": "paintedplanks:block/lime_wood_planks",
+    "top": "paintedplanks:block/lime_wood_planks"
+  }
+}
