@@ -1,43 +1,33 @@
-# Kotlin Modding Skeleton
-Provides an example mod written in Kotlin using Kotlin for Forge.
+![PaintedPlanksLogo](https://github.com/Auxy6858/PaintedPlanks/blob/1.21-neoforge/banner.png?raw=true)
 
-## IMPORTANT:
-If your mod uses another library that is written in Kotlin (like OkHttp3) you will need to use the slim artifact of KFF instead.
-```groovy
-dependencies {
-    // Use slim artifact of KFF
-    implementation('thedarkcolour:kotlinforforge-neoforge:VERSION:slim')
-    
-    // Add Kotlin libs as non-mc libs in ModDevGradle
-    additionalRuntimeClasspath ('org.jetbrains.kotlin:kotlin-stdlib')
-    additionalRuntimeClasspath ('org.jetbrains.kotlin:kotlin-reflect')
-    additionalRuntimeClasspath ('org.jetbrains.kotlinx:kotlinx-coroutines-core')
-    additionalRuntimeClasspath ('org.jetbrains.kotlinx:kotlinx-serialization-core')
-    additionalRuntimeClasspath ('org.jetbrains.kotlinx:kotlinx-serialization-json')
-}
-```
+# **PaintedPlanks**
 
-ALSO:  
-Debugging with Coroutines is currently broken due to an issue [with JPMS and IntelliJ](https://youtrack.jetbrains.com/issue/KTIJ-15750/Debugger-doesnt-work-at-all-in-Java-projects-with-enabled-Kotlin-plugin-and-coroutine-debugger#focus=Comments-27-4923828.0-0). You might see an error like this upon running the game in Debug Mode:
-```
-Exception in thread "main" java.lang.NoClassDefFoundError: kotlin/Result
-    at kotlinx.coroutines.debug.AgentPremain.<clinit>(AgentPremain.kt:20)
-    at java.base/jdk.internal.misc.Unsafe.ensureClassInitialized0(Native Method)
-    at java.base/jdk.internal.misc.Unsafe.ensureClassInitialized(Unsafe.java:1160)
-    at java.base/jdk.internal.reflect.MethodHandleAccessorFactory.ensureClassInitialized(MethodHandleAccessorFactory.java:300)
-    at java.base/jdk.internal.reflect.MethodHandleAccessorFactory.newMethodAccessor(MethodHandleAccessorFactory.java:71)
-    at java.base/jdk.internal.reflect.ReflectionFactory.newMethodAccessor(ReflectionFactory.java:159)
-    at java.base/java.lang.reflect.Method.acquireMethodAccessor(Method.java:726)
-    at java.base/java.lang.reflect.Method.invoke(Method.java:577)
-    at java.instrument/sun.instrument.InstrumentationImpl.loadClassAndStartAgent(InstrumentationImpl.java:560)
-    at java.instrument/sun.instrument.InstrumentationImpl.loadClassAndCallPremain(InstrumentationImpl.java:572)
-Caused by: java.lang.ClassNotFoundException: kotlin.Result
-    ... 10 more
-*** java.lang.instrument ASSERTION FAILED ***: "!errorOutstanding" with message Outstanding error when calling method in invokeJavaAgentMainMethod at s\open\src\java.instrument\share\native\libinstrument\JPLISAgent.c line: 627
-*** java.lang.instrument ASSERTION FAILED ***: "success" with message invokeJavaAgentMainMethod failed at s\open\src\java.instrument\share\native\libinstrument\JPLISAgent.c line: 466
-*** java.lang.instrument ASSERTION FAILED ***: "result" with message agent load/premain call failed at s\open\src\java.instrument\share\native\libinstrument\JPLISAgent.c line: 429
-```
+<img src="https://img.shields.io/badge/KOTLIN%20FOR%20FORGE-blue?logo=kotlin&labelColor=gray&style=for-the-badge" alt="Kotlin for forge banner" href="https://modrinth.com/mod/kotlin-for-forge"/>
 
-### The Fix
-The link above contains a fix for older IntelliJ versions which no longer applies. The new fix is going to `Settings > Build, Execution, Deployment > Debugger` and ticking the "Disable coroutine agent" setting under the Kotlin section:
-![coroutines_fix.png](coroutines_fix.png)
+
+This mod adds coloured variants of the wooden planks to the game which can be crafted in the same way you would craft stained glass or terracotta.
+
+# Installation Requirements
+
+## Neoforge + Kotlin for Forge
+<img src="https://neoforged.net/img/content/branding/banner.png" alt="Neoforge logo" width="250"/>
+
+<img src="https://upload.wikimedia.org/wikipedia/commons/a/af/Kotlin_Full_Color_Logo_Mark_RGB.png?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original" alt="Kotlin logo" width="50"/>
+
+
+# **Other Modloaders**
+
+## **Forge, Fabric and Quilt**
+<img alt="Fabric logo" src="https://fabricmc.net/assets/logo.png" width="75"/>
+<img alt="QuiltMC logo" src="https://quiltmc.org/assets/img/logo.svg" width="75"/>
+<img alt="Forge logo" src="https://files.minecraftforge.net/static/images/apple-touch-icon.png" width="75"/>
+
+
+As of now I have no interest in porting this mod to modloaders such as fabric and quilt.
+If you wish to port the mod to these modloaders feel free to, I just request that you credit me in said port however this is not a requirement.
+
+
+
+# Additional Information
+
+The idea for PaintedPlanks started in 2022 when I was playing on my survival world. I wanted to make a structure out of wood however none of the in game planks matched the colour palette I was going for, so I went on curseforge in search of a mod that added coloured planks to the game, however the one mod I did find didn't include any of the relevant item tags. This led me to attempt to create my own mod to do just that. The mod began development in forge and later moved over to fabric. However a lack of programming knowledge combined with a lack of interest in the game led me to abandon the project. In recent times I have gotten back into minecraft and after a conversation with my friend about Mojang's lack of interesting features (for us personally) in recent updates I decided to add some of the features I want in the game, leading to me picking up development on this mod, completely rewriting it from the ground up in forge, my preferred mod loader. Three years on I once again continued work on the mod, rewriting it in Kotlin for Neoforge.
