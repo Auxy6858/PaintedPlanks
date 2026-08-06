@@ -35,22 +35,15 @@ object ModBlocks {
             .ignitedByLava()
     }
 
-    data class ColoredWoodFamily
-        (
+    data class ColoredWoodFamily(
         val planks: DeferredBlock<Block>,
         val stairs: DeferredBlock<StairBlock>,
         val slab: DeferredBlock<SlabBlock>,
-        val door: DeferredBlock<DoorBlock>
-
+        val door: DeferredBlock<DoorBlock>,
+        val trapdoor: DeferredBlock<TrapDoorBlock>,
     ) : Iterable<DeferredBlock<out Block>> {
-        override fun iterator(): Iterator<DeferredBlock<out Block>> {
-            return iterator {
-                yield(planks)
-                yield(stairs)
-                yield(slab)
-                yield(door)
-            }
-        }
+        override fun iterator(): Iterator<DeferredBlock<out Block>> =
+            listOf(planks, stairs, slab, door, trapdoor).iterator()
     }
 
     val COLORED_WOOD_FAMILIES: Map<DyeColor, ColoredWoodFamily> = DyeColor.entries.associateWith { dyeColor ->
@@ -59,36 +52,34 @@ object ModBlocks {
 
         PaintedPlanks.LOGGER.log(Level.INFO, "Registering $colorName wood")
 
-        val planksSupplier = BLOCK_REGISTRY.register("${colorName}_planks") {
-            ->
-            Block(properties)
-        }
+        val planksSupplier = BLOCK_REGISTRY.register("${colorName}_planks") { -> Block(properties) }
 
-        val stairsSupplier = BLOCK_REGISTRY.register("${colorName}_stairs") {
-            ->
+        val stairsSupplier = BLOCK_REGISTRY.register("${colorName}_stairs") { ->
             StairBlock(planksSupplier.get().defaultBlockState(), properties)
         }
 
-        val slabSupplier = BLOCK_REGISTRY.register("${colorName}_slab") {
-            ->
-            SlabBlock(properties)
+        val slabSupplier = BLOCK_REGISTRY.register("${colorName}_slab") { -> SlabBlock(properties) }
+
+        val doorSupplier = BLOCK_REGISTRY.register("${colorName}_door") { ->
+            DoorBlock(BlockSetType.CHERRY, properties.noOcclusion())
         }
 
-        val doorSupplier = BLOCK_REGISTRY.register("${colorName}_door") {
-            ->
-            DoorBlock(BlockSetType.CHERRY, properties.noCollission())
+        val trapdoorSupplier = BLOCK_REGISTRY.register("${colorName}_trapdoor") { ->
+            TrapDoorBlock(BlockSetType.CHERRY, properties.noOcclusion())
         }
 
         ModItems.ITEM_REGISTRY.registerSimpleBlockItem(planksSupplier)
         ModItems.ITEM_REGISTRY.registerSimpleBlockItem(stairsSupplier)
         ModItems.ITEM_REGISTRY.registerSimpleBlockItem(slabSupplier)
         ModItems.ITEM_REGISTRY.registerSimpleBlockItem(doorSupplier)
+        ModItems.ITEM_REGISTRY.registerSimpleBlockItem(trapdoorSupplier)
 
         ColoredWoodFamily(
             planks = planksSupplier,
             stairs = stairsSupplier,
             slab = slabSupplier,
-            door = doorSupplier
+            door = doorSupplier,
+            trapdoor = trapdoorSupplier,
         )
     }
 

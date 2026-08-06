@@ -1,5 +1,5 @@
 {
-  "render_type": "minecraft:cutout",
+  "render_type": "minecraft:translucent",
   "parent": "minecraft:block/door_bottom_right",
   "textures": {
     "bottom": "paintedplanks:block/lime_wood_door_bottom",

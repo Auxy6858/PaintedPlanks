@@ -1,21 +1,17 @@
 {
   "type": "minecraft:crafting_shaped",
   "category": "redstone",
-  "group": "wooden_fence_gate",
+  "group": "wooden_pressure_plate",
   "key": {
     "#": {
-      "item": "minecraft:stick"
-    },
-    "W": {
       "item": "paintedplanks:red_wood_planks"
     }
   },
   "pattern": [
-    "#W#",
-    "#W#"
+    "##"
   ],
   "result": {
-    "item": "paintedplanks:red_wood_fence_gate"
+    "id": "paintedplanks:red_wood_pressure_plate"
   },
   "show_notification": true
 }
