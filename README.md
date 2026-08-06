@@ -2,7 +2,8 @@
 
 # **PaintedPlanks**
 
-<img src="https://img.shields.io/badge/KOTLIN%20FOR%20FORGE-blue?logo=kotlin&labelColor=gray&style=for-the-badge" alt="Kotlin for forge banner" href="https://modrinth.com/mod/kotlin-for-forge"/>
+[![Kotlin for forge banner](https://img.shields.io/badge/KOTLIN%20FOR%20FORGE-blue?logo=kotlin&labelColor=gray&style=for-the-badge)](https://modrinth.com/mod/kotlin-for-forge)
+
 
 
 This mod adds coloured variants of the wooden planks to the game which can be crafted in the same way you would craft stained glass or terracotta.
