@@ -8,7 +8,7 @@ import net.neoforged.neoforge.data.event.GatherDataEvent
  * Registers all data providers (tags, recipes, loot tables, etc.) that get run
  * by the `data` run configuration / `./gradlew runData`.
  */
-@EventBusSubscriber(bus = EventBusSubscriber.Bus.MOD)
+@EventBusSubscriber
 object DataGenerators {
     @SubscribeEvent
     fun gatherData(event: GatherDataEvent) {

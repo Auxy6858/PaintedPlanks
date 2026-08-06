@@ -1,10 +1,12 @@
 ![PaintedPlanksLogo](https://github.com/Auxy6858/PaintedPlanks/blob/1.21-neoforge/banner.png?raw=true)
 
 # **PaintedPlanks**
-
-[![Kotlin for forge banner](https://img.shields.io/badge/KOTLIN%20FOR%20FORGE-blue?logo=kotlin&labelColor=gray&style=for-the-badge)](https://modrinth.com/mod/kotlin-for-forge)
-
-
+<div>
+    <img src="https://wsrv.nl/?url=https%3A%2F%2Fmedia.forgecdn.net%2Fattachments%2Fdescription%2F1030830%2Fdescription_61b2487d-46b5-4098-b4b0-cc87790ed49e.png&n=-1" height="25px" alt="Neoforge banner"/>
+    <a href="https://modrinth.com/mod/kotlin-for-forge">
+        <img alt="Kotlin for forge banner" src="https://img.shields.io/badge/KOTLIN%20FOR%20FORGE-blue?logo=kotlin&labelColor=gray&style=for-the-badge" height="25px"/>
+    </a>
+</div>
 
 This mod adds coloured variants of the wooden planks to the game which can be crafted in the same way you would craft stained glass or terracotta.
 

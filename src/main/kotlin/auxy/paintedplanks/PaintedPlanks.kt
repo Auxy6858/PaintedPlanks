@@ -26,7 +26,7 @@ import thedarkcolour.kotlinforforge.neoforge.forge.runForDist
  * An example for blocks is in the `blocks` package of this mod.
  */
 @Mod(PaintedPlanks.ID)
-@EventBusSubscriber(bus = EventBusSubscriber.Bus.MOD)
+@EventBusSubscriber
 object PaintedPlanks {
     const val ID = "paintedplanks"
     val LOGGER: Logger = LogManager.getLogger(ID)
