@@ -10,7 +10,13 @@ import net.minecraft.world.level.block.state.properties.NoteBlockInstrument
 import net.minecraft.world.item.BlockItem
 import net.minecraft.world.item.DyeColor
 import net.minecraft.world.item.Item
-import net.minecraft.world.level.block.*
+import net.minecraft.world.level.block.SoundType
+import net.minecraft.world.level.block.StairBlock
+import net.minecraft.world.level.block.SlabBlock
+import net.minecraft.world.level.block.DoorBlock
+import net.minecraft.world.level.block.PressurePlateBlock
+import net.minecraft.world.level.block.TrapDoorBlock
+
 import net.minecraft.world.level.block.state.properties.BlockSetType
 import net.minecraft.world.level.material.MapColor
 import net.minecraft.world.level.material.PushReaction
@@ -41,16 +47,17 @@ object ModBlocks {
         val slab: DeferredBlock<SlabBlock>,
         val door: DeferredBlock<DoorBlock>,
         val trapdoor: DeferredBlock<TrapDoorBlock>,
+        val pressurePlate: DeferredBlock<PressurePlateBlock>
     ) : Iterable<DeferredBlock<out Block>> {
         override fun iterator(): Iterator<DeferredBlock<out Block>> =
-            listOf(planks, stairs, slab, door, trapdoor).iterator()
+            listOf(planks, stairs, slab, door, trapdoor, pressurePlate).iterator()
     }
 
     val COLORED_WOOD_FAMILIES: Map<DyeColor, ColoredWoodFamily> = DyeColor.entries.associateWith { dyeColor ->
         val colorName = "${dyeColor.getName()}_wood"
         val properties = woodProps(dyeColor)
 
-        PaintedPlanks.LOGGER.log(Level.INFO, "Registering $colorName wood")
+        PaintedPlanks.LOGGER.log(Level.DEBUG, "Registering $colorName wood")
 
         val planksSupplier = BLOCK_REGISTRY.register("${colorName}_planks") { -> Block(properties) }
 
@@ -68,11 +75,16 @@ object ModBlocks {
             TrapDoorBlock(BlockSetType.CHERRY, properties.noOcclusion())
         }
 
+        val pressurePlateSupplier = BLOCK_REGISTRY.register("${colorName}_pressure_plate") { ->
+            PressurePlateBlock(BlockSetType.CHERRY, properties)
+        }
+
         ModItems.ITEM_REGISTRY.registerSimpleBlockItem(planksSupplier)
         ModItems.ITEM_REGISTRY.registerSimpleBlockItem(stairsSupplier)
         ModItems.ITEM_REGISTRY.registerSimpleBlockItem(slabSupplier)
         ModItems.ITEM_REGISTRY.registerSimpleBlockItem(doorSupplier)
         ModItems.ITEM_REGISTRY.registerSimpleBlockItem(trapdoorSupplier)
+        ModItems.ITEM_REGISTRY.registerSimpleBlockItem(pressurePlateSupplier)
 
         ColoredWoodFamily(
             planks = planksSupplier,
@@ -80,6 +92,7 @@ object ModBlocks {
             slab = slabSupplier,
             door = doorSupplier,
             trapdoor = trapdoorSupplier,
+            pressurePlate = pressurePlateSupplier,
         )
     }
 

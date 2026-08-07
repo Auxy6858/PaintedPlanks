@@ -17,8 +17,8 @@ object CreativeModeTab {
             .title(Component.translatable("itemGroup.paintedplanks"))
             .icon { ModBlocks.COLORED_WOOD_FAMILIES[DyeColor.RED]!!.planks.toStack() }
             .displayItems { _, output ->
-                for (family in ModBlocks.COLORED_WOOD_FAMILIES) {
-                    for (blockHolder in family.value) {
+                for (family in ModBlocks.COLORED_WOOD_FAMILIES.values) {
+                    for (blockHolder in family) {
                         output.accept(blockHolder.get())
                     }
                 }

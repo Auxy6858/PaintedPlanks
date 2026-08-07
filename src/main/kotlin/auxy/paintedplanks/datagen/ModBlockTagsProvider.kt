@@ -21,21 +21,20 @@ class ModBlockTagsProvider(
 ) : BlockTagsProvider(output, lookupProvider, PaintedPlanks.ID, existingFileHelper) {
 
     override fun addTags(provider: HolderLookup.Provider) {
-        for (family in ModBlocks.COLORED_WOOD_FAMILIES.values) {
-            tag(BlockTags.PLANKS).add(family.planks.get())
-            tag(BlockTags.WOODEN_STAIRS).add(family.stairs.get())
-            tag(BlockTags.WOODEN_SLABS).add(family.slab.get())
-            tag(BlockTags.WOODEN_DOORS).add(family.door.get())
-            tag(BlockTags.WOODEN_TRAPDOORS).add(family.trapdoor.get())
+        for (family in ModBlocks.COLORED_WOOD_FAMILIES) {
+            tag(BlockTags.PLANKS).add(family.value.planks.get())
+            tag(BlockTags.WOODEN_STAIRS).add(family.value.stairs.get())
+            tag(BlockTags.WOODEN_SLABS).add(family.value.slab.get())
+            tag(BlockTags.WOODEN_DOORS).add(family.value.door.get())
+            tag(BlockTags.WOODEN_TRAPDOORS).add(family.value.trapdoor.get())
 
-            tag(BlockTags.MINEABLE_WITH_AXE)
-                .add(
-                    family.planks.get(),
-                    family.stairs.get(),
-                    family.slab.get(),
-                    family.door.get(),
-                    family.trapdoor.get()
-                )
+
+            for (blockHolder in family.value) {
+                tag(BlockTags.MINEABLE_WITH_AXE)
+                    .add(
+                        blockHolder.get()
+                    )
+            }
         }
     }
 }
