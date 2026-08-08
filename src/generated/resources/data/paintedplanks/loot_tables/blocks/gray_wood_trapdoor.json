@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "paintedplanks:gray_wood_trapdoor"
+        }
+      ],
+      "rolls": 1.0
+    }
+  ]
+}

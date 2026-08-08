@@ -1,6 +1,10 @@
-// 1.21.1	2026-08-06T11:37:16.209525	Tags for minecraft:block mod id paintedplanks
-94baeb98882f33d95bd4976414b4cac62bdade1c data/minecraft/tags/block/mineable/axe.json
+// 1.21.1	2026-08-07T14:38:14.278713	Tags for minecraft:block mod id paintedplanks
+8b12fc17f7d839f6e9c598d6690e6639e4001c78 data/minecraft/tags/block/fences.json
+18127e31b26200c733015acc4f54dd68b56e0019 data/minecraft/tags/block/mineable/axe.json
 498084319b8a8e1a1e2b40df7a7fe0387e10ff27 data/minecraft/tags/block/planks.json
 ec44d37d35583c2e2e7333643a4f60506644b579 data/minecraft/tags/block/wooden_doors.json
+43f4d1be68c37d1db17038f0b2407561af04296b data/minecraft/tags/block/wooden_fences.json
+7832965bbf1405f1afc0890988576c04495db513 data/minecraft/tags/block/wooden_pressure_plates.json
 0e3ffad0909e45e664ce5c3e57b9b4a8bb85d363 data/minecraft/tags/block/wooden_slabs.json
 1ab4d68b1774a10bb10c25ff5c3c93668f69d743 data/minecraft/tags/block/wooden_stairs.json
+cdf203d2dad29903bbbe3b1d2dd2deebbf634a50 data/minecraft/tags/block/wooden_trapdoors.json

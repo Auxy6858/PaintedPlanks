@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "paintedplanks:blue_wood_pressure_plate"
+        }
+      ],
+      "rolls": 1.0
+    }
+  ]
+}

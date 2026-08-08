@@ -10,14 +10,18 @@ import net.minecraft.world.level.block.state.properties.NoteBlockInstrument
 import net.minecraft.world.item.BlockItem
 import net.minecraft.world.item.DyeColor
 import net.minecraft.world.item.Item
+import net.minecraft.world.level.block.ButtonBlock
 import net.minecraft.world.level.block.SoundType
 import net.minecraft.world.level.block.StairBlock
 import net.minecraft.world.level.block.SlabBlock
 import net.minecraft.world.level.block.DoorBlock
+import net.minecraft.world.level.block.FenceBlock
+import net.minecraft.world.level.block.FenceGateBlock
 import net.minecraft.world.level.block.PressurePlateBlock
 import net.minecraft.world.level.block.TrapDoorBlock
 
 import net.minecraft.world.level.block.state.properties.BlockSetType
+import net.minecraft.world.level.block.state.properties.WoodType
 import net.minecraft.world.level.material.MapColor
 import net.minecraft.world.level.material.PushReaction
 import net.neoforged.neoforge.registries.DeferredBlock
@@ -47,10 +51,13 @@ object ModBlocks {
         val slab: DeferredBlock<SlabBlock>,
         val door: DeferredBlock<DoorBlock>,
         val trapdoor: DeferredBlock<TrapDoorBlock>,
-        val pressurePlate: DeferredBlock<PressurePlateBlock>
+        val pressurePlate: DeferredBlock<PressurePlateBlock>,
+        val fence: DeferredBlock<FenceBlock>,
+        val fenceGate: DeferredBlock<FenceGateBlock>,
+        val button: DeferredBlock<ButtonBlock>
     ) : Iterable<DeferredBlock<out Block>> {
         override fun iterator(): Iterator<DeferredBlock<out Block>> =
-            listOf(planks, stairs, slab, door, trapdoor, pressurePlate).iterator()
+            listOf(planks, stairs, slab, door, trapdoor, pressurePlate, fence, fenceGate, button).iterator()
     }
 
     val COLORED_WOOD_FAMILIES: Map<DyeColor, ColoredWoodFamily> = DyeColor.entries.associateWith { dyeColor ->
@@ -79,12 +86,28 @@ object ModBlocks {
             PressurePlateBlock(BlockSetType.CHERRY, properties)
         }
 
+        val fenceSupplier = BLOCK_REGISTRY.register("${colorName}_fence") { ->
+            FenceBlock(properties)
+        }
+
+        val fenceGateSupplier = BLOCK_REGISTRY.register("${colorName}_fence_gate") { ->
+            FenceGateBlock(WoodType.CHERRY, properties)
+        }
+
+        val buttonSupplier = BLOCK_REGISTRY.register("${colorName}_button") { ->
+            ButtonBlock(BlockSetType.CHERRY, 20, properties)
+        }
+
         ModItems.ITEM_REGISTRY.registerSimpleBlockItem(planksSupplier)
         ModItems.ITEM_REGISTRY.registerSimpleBlockItem(stairsSupplier)
         ModItems.ITEM_REGISTRY.registerSimpleBlockItem(slabSupplier)
         ModItems.ITEM_REGISTRY.registerSimpleBlockItem(doorSupplier)
         ModItems.ITEM_REGISTRY.registerSimpleBlockItem(trapdoorSupplier)
         ModItems.ITEM_REGISTRY.registerSimpleBlockItem(pressurePlateSupplier)
+        ModItems.ITEM_REGISTRY.registerSimpleBlockItem(fenceSupplier)
+        ModItems.ITEM_REGISTRY.registerSimpleBlockItem(fenceGateSupplier)
+        ModItems.ITEM_REGISTRY.registerSimpleBlockItem(buttonSupplier)
+
 
         ColoredWoodFamily(
             planks = planksSupplier,
@@ -93,6 +116,9 @@ object ModBlocks {
             door = doorSupplier,
             trapdoor = trapdoorSupplier,
             pressurePlate = pressurePlateSupplier,
+            fence = fenceSupplier,
+            fenceGate = fenceGateSupplier,
+            button = buttonSupplier
         )
     }
 

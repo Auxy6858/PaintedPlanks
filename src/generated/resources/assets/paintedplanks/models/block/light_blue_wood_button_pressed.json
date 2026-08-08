@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/button_pressed",
+  "textures": {
+    "texture": "paintedplanks:block/light_blue_wood_planks"
+  }
+}

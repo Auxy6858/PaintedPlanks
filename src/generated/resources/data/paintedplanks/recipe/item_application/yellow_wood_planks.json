@@ -1,0 +1,16 @@
+{
+  "type": "create:item_application",
+  "ingredients": [
+    {
+      "tag": "minecraft:planks"
+    },
+    {
+      "item": "minecraft:yellow_dye"
+    }
+  ],
+  "results": [
+    {
+      "id": "paintedplanks:yellow_wood_planks"
+    }
+  ]
+}

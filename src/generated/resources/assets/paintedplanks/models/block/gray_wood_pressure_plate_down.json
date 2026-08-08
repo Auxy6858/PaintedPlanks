@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/pressure_plate_down",
+  "textures": {
+    "texture": "paintedplanks:block/gray_wood_planks"
+  }
+}

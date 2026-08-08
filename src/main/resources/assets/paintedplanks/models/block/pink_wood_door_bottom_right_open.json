@@ -1,8 +1,0 @@
-{
-  "render_type": "minecraft:translucent",
-  "parent": "minecraft:block/door_bottom_right_open",
-  "textures": {
-    "bottom": "paintedplanks:block/pink_wood_door_bottom",
-    "top": "paintedplanks:block/pink_wood_door_top"
-  }
-}

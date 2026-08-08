@@ -27,7 +27,10 @@ class ModBlockTagsProvider(
             tag(BlockTags.WOODEN_SLABS).add(family.value.slab.get())
             tag(BlockTags.WOODEN_DOORS).add(family.value.door.get())
             tag(BlockTags.WOODEN_TRAPDOORS).add(family.value.trapdoor.get())
-
+            tag(BlockTags.WOODEN_FENCES).add(family.value.fence.get())
+            tag(BlockTags.FENCES).add(family.value.fence.get())
+            tag(BlockTags.WOODEN_FENCES).add(family.value.fenceGate.get())
+            tag(BlockTags.WOODEN_PRESSURE_PLATES).add(family.value.pressurePlate.get())
 
             for (blockHolder in family.value) {
                 tag(BlockTags.MINEABLE_WITH_AXE)

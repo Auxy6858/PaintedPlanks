@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "paintedplanks:orange_wood_fence"
+        }
+      ],
+      "rolls": 1.0
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/door_bottom_right",
+  "render_type": "minecraft:translucent",
+  "textures": {
+    "bottom": "paintedplanks:block/white_wood_door_bottom",
+    "top": "paintedplanks:block/white_wood_door_top"
+  }
+}

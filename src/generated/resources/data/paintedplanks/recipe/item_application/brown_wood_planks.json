@@ -1,0 +1,16 @@
+{
+  "type": "create:item_application",
+  "ingredients": [
+    {
+      "tag": "minecraft:planks"
+    },
+    {
+      "item": "minecraft:brown_dye"
+    }
+  ],
+  "results": [
+    {
+      "id": "paintedplanks:brown_wood_planks"
+    }
+  ]
+}

@@ -1,6 +1,0 @@
-{
-  "parent": "minecraft:block/cube_all",
-  "textures": {
-    "all": "paintedplanks:block/magenta_wood_planks"
-  }
-}
