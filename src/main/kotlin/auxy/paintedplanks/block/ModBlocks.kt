@@ -19,6 +19,8 @@ import net.minecraft.world.level.block.FenceBlock
 import net.minecraft.world.level.block.FenceGateBlock
 import net.minecraft.world.level.block.PressurePlateBlock
 import net.minecraft.world.level.block.TrapDoorBlock
+import net.minecraft.world.level.block.RotatedPillarBlock
+
 
 import net.minecraft.world.level.block.state.properties.BlockSetType
 import net.minecraft.world.level.block.state.properties.WoodType
@@ -54,10 +56,11 @@ object ModBlocks {
         val pressurePlate: DeferredBlock<PressurePlateBlock>,
         val fence: DeferredBlock<FenceBlock>,
         val fenceGate: DeferredBlock<FenceGateBlock>,
-        val button: DeferredBlock<ButtonBlock>
+        val button: DeferredBlock<ButtonBlock>,
+        val log: DeferredBlock<RotatedPillarBlock>,
     ) : Iterable<DeferredBlock<out Block>> {
         override fun iterator(): Iterator<DeferredBlock<out Block>> =
-            listOf(planks, stairs, slab, door, trapdoor, pressurePlate, fence, fenceGate, button).iterator()
+            listOf(planks, stairs, slab, door, trapdoor, pressurePlate, fence, fenceGate, button, log).iterator()
     }
 
     val COLORED_WOOD_FAMILIES: Map<DyeColor, ColoredWoodFamily> = DyeColor.entries.associateWith { dyeColor ->
@@ -98,6 +101,10 @@ object ModBlocks {
             ButtonBlock(BlockSetType.CHERRY, 20, properties)
         }
 
+        val logSuppplier = BLOCK_REGISTRY.register("${colorName}_log") { ->
+            RotatedPillarBlock(properties)
+        }
+
         ModItems.ITEM_REGISTRY.registerSimpleBlockItem(planksSupplier)
         ModItems.ITEM_REGISTRY.registerSimpleBlockItem(stairsSupplier)
         ModItems.ITEM_REGISTRY.registerSimpleBlockItem(slabSupplier)
@@ -107,6 +114,7 @@ object ModBlocks {
         ModItems.ITEM_REGISTRY.registerSimpleBlockItem(fenceSupplier)
         ModItems.ITEM_REGISTRY.registerSimpleBlockItem(fenceGateSupplier)
         ModItems.ITEM_REGISTRY.registerSimpleBlockItem(buttonSupplier)
+        ModItems.ITEM_REGISTRY.registerSimpleBlockItem(logSuppplier)
 
 
         ColoredWoodFamily(
@@ -118,7 +126,8 @@ object ModBlocks {
             pressurePlate = pressurePlateSupplier,
             fence = fenceSupplier,
             fenceGate = fenceGateSupplier,
-            button = buttonSupplier
+            button = buttonSupplier,
+            log = logSuppplier,
         )
     }
 
