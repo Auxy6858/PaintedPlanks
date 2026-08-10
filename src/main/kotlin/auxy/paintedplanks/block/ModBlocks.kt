@@ -20,7 +20,8 @@ import net.minecraft.world.level.block.FenceGateBlock
 import net.minecraft.world.level.block.PressurePlateBlock
 import net.minecraft.world.level.block.TrapDoorBlock
 import net.minecraft.world.level.block.RotatedPillarBlock
-
+import net.minecraft.world.level.block.StandingSignBlock
+import net.minecraft.world.level.block.WallSignBlock
 
 import net.minecraft.world.level.block.state.properties.BlockSetType
 import net.minecraft.world.level.block.state.properties.WoodType
@@ -58,9 +59,24 @@ object ModBlocks {
         val fenceGate: DeferredBlock<FenceGateBlock>,
         val button: DeferredBlock<ButtonBlock>,
         val log: DeferredBlock<RotatedPillarBlock>,
+        val sign: DeferredBlock<StandingSignBlock>,
+        val wallSign: DeferredBlock<WallSignBlock>,
     ) : Iterable<DeferredBlock<out Block>> {
         override fun iterator(): Iterator<DeferredBlock<out Block>> =
-            listOf(planks, stairs, slab, door, trapdoor, pressurePlate, fence, fenceGate, button, log).iterator()
+            listOf(
+                planks,
+                stairs,
+                slab,
+                door,
+                trapdoor,
+                pressurePlate,
+                fence,
+                fenceGate,
+                button,
+                log,
+                sign,
+                wallSign
+            ).iterator()
     }
 
     val COLORED_WOOD_FAMILIES: Map<DyeColor, ColoredWoodFamily> = DyeColor.entries.associateWith { dyeColor ->
@@ -105,6 +121,15 @@ object ModBlocks {
             RotatedPillarBlock(properties)
         }
 
+        val signSupplier = BLOCK_REGISTRY.register("${colorName}_sign") { ->
+            StandingSignBlock(WoodType.CHERRY, properties)
+        }
+
+        val wallSignSupplier = BLOCK_REGISTRY.register("${colorName}_wall_sign") { ->
+            WallSignBlock(WoodType.CHERRY, properties)
+        }
+
+
         ModItems.ITEM_REGISTRY.registerSimpleBlockItem(planksSupplier)
         ModItems.ITEM_REGISTRY.registerSimpleBlockItem(stairsSupplier)
         ModItems.ITEM_REGISTRY.registerSimpleBlockItem(slabSupplier)
@@ -115,6 +140,8 @@ object ModBlocks {
         ModItems.ITEM_REGISTRY.registerSimpleBlockItem(fenceGateSupplier)
         ModItems.ITEM_REGISTRY.registerSimpleBlockItem(buttonSupplier)
         ModItems.ITEM_REGISTRY.registerSimpleBlockItem(logSuppplier)
+        ModItems.ITEM_REGISTRY.registerSimpleBlockItem(signSupplier)
+        ModItems.ITEM_REGISTRY.registerSimpleBlockItem(wallSignSupplier)
 
 
         ColoredWoodFamily(
@@ -128,6 +155,8 @@ object ModBlocks {
             fenceGate = fenceGateSupplier,
             button = buttonSupplier,
             log = logSuppplier,
+            sign = signSupplier,
+            wallSign = wallSignSupplier,
         )
     }
 

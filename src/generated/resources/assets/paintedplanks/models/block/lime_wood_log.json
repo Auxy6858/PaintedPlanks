@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "paintedplanks:block/lime_wood_log_top",
+    "side": "paintedplanks:block/lime_wood_log"
+  }
+}

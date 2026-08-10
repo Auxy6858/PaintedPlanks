@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column_horizontal",
+  "textures": {
+    "end": "paintedplanks:block/purple_wood_log_top",
+    "side": "paintedplanks:block/purple_wood_log"
+  }
+}
