@@ -20,8 +20,10 @@ import net.minecraft.world.level.block.FenceGateBlock
 import net.minecraft.world.level.block.PressurePlateBlock
 import net.minecraft.world.level.block.TrapDoorBlock
 import net.minecraft.world.level.block.RotatedPillarBlock
+import net.minecraft.world.level.block.SignBlock
 import net.minecraft.world.level.block.StandingSignBlock
 import net.minecraft.world.level.block.WallSignBlock
+
 
 import net.minecraft.world.level.block.state.properties.BlockSetType
 import net.minecraft.world.level.block.state.properties.WoodType
@@ -75,7 +77,7 @@ object ModBlocks {
                 button,
                 log,
                 sign,
-                wallSign
+                wallSign,
             ).iterator()
     }
 
@@ -129,7 +131,6 @@ object ModBlocks {
             WallSignBlock(WoodType.CHERRY, properties)
         }
 
-
         ModItems.ITEM_REGISTRY.registerSimpleBlockItem(planksSupplier)
         ModItems.ITEM_REGISTRY.registerSimpleBlockItem(stairsSupplier)
         ModItems.ITEM_REGISTRY.registerSimpleBlockItem(slabSupplier)
@@ -142,6 +143,7 @@ object ModBlocks {
         ModItems.ITEM_REGISTRY.registerSimpleBlockItem(logSuppplier)
         ModItems.ITEM_REGISTRY.registerSimpleBlockItem(signSupplier)
         ModItems.ITEM_REGISTRY.registerSimpleBlockItem(wallSignSupplier)
+
 
 
         ColoredWoodFamily(
