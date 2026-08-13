@@ -4,6 +4,7 @@ import auxy.paintedplanks.block.ModBlocks
 import auxy.paintedplanks.block.ModBlocks.BLOCK_REGISTRY
 import auxy.paintedplanks.item.ModItems.ITEM_REGISTRY
 import auxy.paintedplanks.CreativeModeTab.CREATIVE_TABS
+import auxy.paintedplanks.block.ModBlockEntities
 import net.minecraft.world.level.block.Blocks
 import net.minecraft.world.level.block.FireBlock
 import net.neoforged.bus.api.SubscribeEvent
@@ -36,6 +37,7 @@ object PaintedPlanks {
         BLOCK_REGISTRY.register(MOD_BUS)
         ITEM_REGISTRY.register(MOD_BUS)
         CREATIVE_TABS.register(MOD_BUS)
+        ModBlockEntities.BLOCK_ENTITY_TYPES.register(MOD_BUS)
 
         runForDist(
             clientTarget = { MOD_BUS.addListener(::onClientSetup) },

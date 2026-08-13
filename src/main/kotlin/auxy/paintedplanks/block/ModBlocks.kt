@@ -23,6 +23,7 @@ import net.minecraft.world.level.block.RotatedPillarBlock
 import net.minecraft.world.level.block.SignBlock
 import net.minecraft.world.level.block.StandingSignBlock
 import net.minecraft.world.level.block.WallSignBlock
+import net.minecraft.world.item.*
 
 
 import net.minecraft.world.level.block.state.properties.BlockSetType
@@ -61,8 +62,8 @@ object ModBlocks {
         val fenceGate: DeferredBlock<FenceGateBlock>,
         val button: DeferredBlock<ButtonBlock>,
         val log: DeferredBlock<RotatedPillarBlock>,
-        val sign: DeferredBlock<StandingSignBlock>,
-        val wallSign: DeferredBlock<WallSignBlock>,
+        val sign: DeferredBlock<ModStandingSignBlock>,
+        val wallSign: DeferredBlock<ModWallSignBlock>,
     ) : Iterable<DeferredBlock<out Block>> {
         override fun iterator(): Iterator<DeferredBlock<out Block>> =
             listOf(
@@ -124,11 +125,11 @@ object ModBlocks {
         }
 
         val signSupplier = BLOCK_REGISTRY.register("${colorName}_sign") { ->
-            StandingSignBlock(WoodType.CHERRY, properties)
+            ModStandingSignBlock(properties, WoodType.CHERRY)
         }
 
         val wallSignSupplier = BLOCK_REGISTRY.register("${colorName}_wall_sign") { ->
-            WallSignBlock(WoodType.CHERRY, properties)
+            ModWallSignBlock(properties, WoodType.CHERRY)
         }
 
         ModItems.ITEM_REGISTRY.registerSimpleBlockItem(planksSupplier)
@@ -141,8 +142,13 @@ object ModBlocks {
         ModItems.ITEM_REGISTRY.registerSimpleBlockItem(fenceGateSupplier)
         ModItems.ITEM_REGISTRY.registerSimpleBlockItem(buttonSupplier)
         ModItems.ITEM_REGISTRY.registerSimpleBlockItem(logSuppplier)
-        ModItems.ITEM_REGISTRY.registerSimpleBlockItem(signSupplier)
-        ModItems.ITEM_REGISTRY.registerSimpleBlockItem(wallSignSupplier)
+        ModItems.ITEM_REGISTRY.register("${colorName}_sign") { ->
+            SignItem(
+                Item.Properties().stacksTo(16),
+                signSupplier.get(),
+                wallSignSupplier.get()
+            )
+        }
 
 
 
