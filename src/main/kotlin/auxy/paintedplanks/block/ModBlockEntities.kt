@@ -1,3 +1,6 @@
+// Thank you to https://github.com/Adubbz
+// the lead dev of biomes o plenty for letting me use their code for reference
+
 package auxy.paintedplanks.block
 
 import auxy.paintedplanks.PaintedPlanks.ID
