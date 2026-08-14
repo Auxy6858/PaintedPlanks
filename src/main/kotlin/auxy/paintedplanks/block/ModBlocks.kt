@@ -52,6 +52,7 @@ object ModBlocks {
     }
 
     data class ColoredWoodFamily(
+        val woodType: WoodType,
         val planks: DeferredBlock<Block>,
         val stairs: DeferredBlock<StairBlock>,
         val slab: DeferredBlock<SlabBlock>,
@@ -88,6 +89,8 @@ object ModBlocks {
 
         PaintedPlanks.LOGGER.log(Level.DEBUG, "Registering $colorName wood")
 
+        val woodType = WoodType(colorName, BlockSetType.CHERRY)
+
         val planksSupplier = BLOCK_REGISTRY.register("${colorName}_planks") { -> Block(properties) }
 
         val stairsSupplier = BLOCK_REGISTRY.register("${colorName}_stairs") { ->
@@ -113,7 +116,7 @@ object ModBlocks {
         }
 
         val fenceGateSupplier = BLOCK_REGISTRY.register("${colorName}_fence_gate") { ->
-            FenceGateBlock(WoodType.CHERRY, properties)
+            FenceGateBlock(woodType, properties)
         }
 
         val buttonSupplier = BLOCK_REGISTRY.register("${colorName}_button") { ->
@@ -125,11 +128,11 @@ object ModBlocks {
         }
 
         val signSupplier = BLOCK_REGISTRY.register("${colorName}_sign") { ->
-            ModStandingSignBlock(properties, WoodType.CHERRY)
+            ModStandingSignBlock(properties.noCollission(), woodType)
         }
 
         val wallSignSupplier = BLOCK_REGISTRY.register("${colorName}_wall_sign") { ->
-            ModWallSignBlock(properties, WoodType.CHERRY)
+            ModWallSignBlock(properties.noCollission(), woodType)
         }
 
         ModItems.ITEM_REGISTRY.registerSimpleBlockItem(planksSupplier)
@@ -153,6 +156,7 @@ object ModBlocks {
 
 
         ColoredWoodFamily(
+            woodType = woodType,
             planks = planksSupplier,
             stairs = stairsSupplier,
             slab = slabSupplier,

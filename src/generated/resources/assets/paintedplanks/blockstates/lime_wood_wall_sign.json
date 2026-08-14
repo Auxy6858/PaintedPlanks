@@ -1,7 +1,19 @@
 {
   "variants": {
-    "": {
-      "model": "paintedplanks:block/lime_wood_sign"
+    "facing=east": {
+      "model": "paintedplanks:block/lime_wood_wall_sign",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "paintedplanks:block/lime_wood_wall_sign"
+    },
+    "facing=south": {
+      "model": "paintedplanks:block/lime_wood_wall_sign",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "paintedplanks:block/lime_wood_wall_sign",
+      "y": 270
     }
   }
 }

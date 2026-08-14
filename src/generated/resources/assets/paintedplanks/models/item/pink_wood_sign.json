@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "paintedplanks:item/pink_wood_sign"
+  }
+}

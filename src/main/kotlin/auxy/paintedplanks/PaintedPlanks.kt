@@ -5,6 +5,7 @@ import auxy.paintedplanks.block.ModBlocks.BLOCK_REGISTRY
 import auxy.paintedplanks.item.ModItems.ITEM_REGISTRY
 import auxy.paintedplanks.CreativeModeTab.CREATIVE_TABS
 import auxy.paintedplanks.block.ModBlockEntities
+import auxy.paintedplanks.block.entity.ModSignBlockEntity
 import net.minecraft.world.level.block.Blocks
 import net.minecraft.world.level.block.FireBlock
 import net.neoforged.bus.api.SubscribeEvent
@@ -13,6 +14,10 @@ import net.neoforged.fml.common.Mod
 import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent
 import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent
 import net.neoforged.fml.event.lifecycle.FMLDedicatedServerSetupEvent
+import net.neoforged.api.distmarker.Dist
+import net.neoforged.neoforge.client.event.EntityRenderersEvent
+import net.minecraft.client.renderer.blockentity.SignRenderer
+import net.minecraft.client.renderer.blockentity.HangingSignRenderer
 import org.apache.logging.log4j.Level
 import org.apache.logging.log4j.LogManager
 import org.apache.logging.log4j.Logger
@@ -63,6 +68,13 @@ object PaintedPlanks {
                     fireBlock.setFlammable(block.get(), 5, 20)
                 }
             }
+        }
+    }
+
+    @SubscribeEvent
+    fun registerRenderers(event: EntityRenderersEvent.RegisterRenderers) {
+        event.registerBlockEntityRenderer(ModBlockEntities.SIGN.get()) { context ->
+            SignRenderer(context)
         }
     }
 }

@@ -1,6 +1,6 @@
-// 1.21.1	2026-08-09T18:27:30.439687	Tags for minecraft:block mod id paintedplanks
+// 1.21.1	2026-08-13T22:41:00.50288	Tags for minecraft:block mod id paintedplanks
 8b12fc17f7d839f6e9c598d6690e6639e4001c78 data/minecraft/tags/block/fences.json
-39fa86f2556f4b35989e4c32f4feac1745438837 data/minecraft/tags/block/mineable/axe.json
+a816ee743387d4d13558089caf79b0ffe61ad156 data/minecraft/tags/block/mineable/axe.json
 498084319b8a8e1a1e2b40df7a7fe0387e10ff27 data/minecraft/tags/block/planks.json
 ec44d37d35583c2e2e7333643a4f60506644b579 data/minecraft/tags/block/wooden_doors.json
 43f4d1be68c37d1db17038f0b2407561af04296b data/minecraft/tags/block/wooden_fences.json
