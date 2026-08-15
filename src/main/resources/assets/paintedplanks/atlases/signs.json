@@ -1,0 +1,20 @@
+{
+  "sources": [
+    { "type": "single", "resource": "paintedplanks:entity/signs/white_wood" },
+    { "type": "single", "resource": "paintedplanks:entity/signs/light_gray_wood" },
+    { "type": "single", "resource": "paintedplanks:entity/signs/gray_wood" },
+    { "type": "single", "resource": "paintedplanks:entity/signs/black_wood" },
+    { "type": "single", "resource": "paintedplanks:entity/signs/brown_wood" },
+    { "type": "single", "resource": "paintedplanks:entity/signs/red_wood" },
+    { "type": "single", "resource": "paintedplanks:entity/signs/orange_wood" },
+    { "type": "single", "resource": "paintedplanks:entity/signs/yellow_wood" },
+    { "type": "single", "resource": "paintedplanks:entity/signs/lime_wood" },
+    { "type": "single", "resource": "paintedplanks:entity/signs/green_wood" },
+    { "type": "single", "resource": "paintedplanks:entity/signs/cyan_wood" },
+    { "type": "single", "resource": "paintedplanks:entity/signs/light_blue_wood" },
+    { "type": "single", "resource": "paintedplanks:entity/signs/blue_wood" },
+    { "type": "single", "resource": "paintedplanks:entity/signs/purple_wood" },
+    { "type": "single", "resource": "paintedplanks:entity/signs/magenta_wood" },
+    { "type": "single", "resource": "paintedplanks:entity/signs/pink_wood" }
+  ]
+}

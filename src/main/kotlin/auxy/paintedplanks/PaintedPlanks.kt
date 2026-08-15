@@ -6,6 +6,9 @@ import auxy.paintedplanks.item.ModItems.ITEM_REGISTRY
 import auxy.paintedplanks.CreativeModeTab.CREATIVE_TABS
 import auxy.paintedplanks.block.ModBlockEntities
 import auxy.paintedplanks.block.entity.ModSignBlockEntity
+import net.minecraft.client.model.geom.ModelLayerLocation
+import net.minecraft.client.model.geom.ModelLayers
+import net.minecraft.client.renderer.Sheets
 import net.minecraft.world.level.block.Blocks
 import net.minecraft.world.level.block.FireBlock
 import net.neoforged.bus.api.SubscribeEvent
@@ -52,6 +55,11 @@ object PaintedPlanks {
 
     private fun onClientSetup(event: FMLClientSetupEvent) {
         LOGGER.log(Level.INFO, "Initializing client...")
+        event.enqueueWork {
+            ModBlocks.COLORED_WOOD_FAMILIES.values.forEach { family ->
+                Sheets.addWoodType(family.woodType)
+            }
+        }
     }
 
     private fun onServerSetup(event: FMLDedicatedServerSetupEvent) {

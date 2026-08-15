@@ -3,6 +3,7 @@ package auxy.paintedplanks.block
 import auxy.paintedplanks.PaintedPlanks
 import auxy.paintedplanks.PaintedPlanks.ID
 import auxy.paintedplanks.item.ModItems
+import net.minecraft.client.renderer.Sheets
 
 import net.minecraft.world.level.block.Block
 import net.minecraft.world.level.block.state.BlockBehaviour
@@ -89,7 +90,7 @@ object ModBlocks {
 
         PaintedPlanks.LOGGER.log(Level.DEBUG, "Registering $colorName wood")
 
-        val woodType = WoodType(colorName, BlockSetType.CHERRY)
+        val woodType = WoodType.register(WoodType(PaintedPlanks.ID + ":" + colorName, BlockSetType.CHERRY))
 
         val planksSupplier = BLOCK_REGISTRY.register("${colorName}_planks") { -> Block(properties) }
 
@@ -152,8 +153,6 @@ object ModBlocks {
                 wallSignSupplier.get()
             )
         }
-
-
 
         ColoredWoodFamily(
             woodType = woodType,
