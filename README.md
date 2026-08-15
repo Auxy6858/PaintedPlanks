@@ -28,3 +28,12 @@ This mod adds coloured variants of the wooden planks to the game which can be cr
 
 As of now I have no interest in porting this mod to modloaders such as fabric and quilt.
 If you wish to port the mod to these modloaders feel free to, I just request that you credit me in said port however this is not a requirement as per the license.
+
+
+## **Special Thanks**
+
+Thank you to the Biomes O' Plenty team for letting me use their code as a reference for the signs in this mod
+
+<a href="https://github.com/Glitchfiend/BiomesOPlenty">
+    <img src="https://raw.githubusercontent.com/Glitchfiend/.github/refs/heads/main/profile/bop.png" alt="Biomes O Plenty logo"/>
+</a>
