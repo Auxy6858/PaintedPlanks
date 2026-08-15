@@ -27,10 +27,4 @@ This mod adds coloured variants of the wooden planks to the game which can be cr
 
 
 As of now I have no interest in porting this mod to modloaders such as fabric and quilt.
-If you wish to port the mod to these modloaders feel free to, I just request that you credit me in said port however this is not a requirement.
-
-
-
-# Additional Information
-
-The idea for PaintedPlanks started in 2022 when I was playing on my survival world. I wanted to make a structure out of wood however none of the in game planks matched the colour palette I was going for, so I went on curseforge in search of a mod that added coloured planks to the game, however the one mod I did find didn't include any of the relevant item tags. This led me to attempt to create my own mod to do just that. The mod began development in forge and later moved over to fabric. However a lack of programming knowledge combined with a lack of interest in the game led me to abandon the project. In recent times I have gotten back into minecraft and after a conversation with my friend about Mojang's lack of interesting features (for us personally) in recent updates I decided to add some of the features I want in the game, leading to me picking up development on this mod, completely rewriting it from the ground up in forge, my preferred mod loader. Three years on I once again continued work on the mod, rewriting it in Kotlin for Neoforge.
+If you wish to port the mod to these modloaders feel free to, I just request that you credit me in said port however this is not a requirement as per the license.
