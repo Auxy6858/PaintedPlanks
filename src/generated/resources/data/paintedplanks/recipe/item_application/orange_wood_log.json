@@ -1,0 +1,16 @@
+{
+  "type": "create:item_application",
+  "ingredients": [
+    {
+      "tag": "minecraft:logs"
+    },
+    {
+      "item": "minecraft:orange_dye"
+    }
+  ],
+  "results": [
+    {
+      "id": "paintedplanks:orange_wood_log"
+    }
+  ]
+}

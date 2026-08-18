@@ -90,7 +90,7 @@ object ModBlocks {
 
         PaintedPlanks.LOGGER.log(Level.DEBUG, "Registering $colorName wood")
 
-        val woodType = WoodType.register(WoodType(ID + ":" + colorName, BlockSetType.CHERRY))
+        val woodType = WoodType.register(WoodType("${ID}:$colorName", BlockSetType.CHERRY))
 
         val planksSupplier = BLOCK_REGISTRY.register("${colorName}_planks") { -> Block(properties) }
 

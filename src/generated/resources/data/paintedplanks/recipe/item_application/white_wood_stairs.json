@@ -1,0 +1,16 @@
+{
+  "type": "create:item_application",
+  "ingredients": [
+    {
+      "tag": "minecraft:wooden_stairs"
+    },
+    {
+      "item": "minecraft:white_dye"
+    }
+  ],
+  "results": [
+    {
+      "id": "paintedplanks:white_wood_stairs"
+    }
+  ]
+}

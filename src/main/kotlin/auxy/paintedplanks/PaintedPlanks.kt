@@ -8,6 +8,8 @@ import auxy.paintedplanks.block.ModBlockEntities
 import auxy.paintedplanks.block.entity.ModSignBlockEntity
 import net.minecraft.client.model.geom.ModelLayerLocation
 import net.minecraft.client.model.geom.ModelLayers
+import net.minecraft.client.renderer.ItemBlockRenderTypes
+import net.minecraft.client.renderer.RenderType
 import net.minecraft.client.renderer.Sheets
 import net.minecraft.world.level.block.Blocks
 import net.minecraft.world.level.block.FireBlock

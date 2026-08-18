@@ -1,19 +1,7 @@
 {
   "variants": {
-    "facing=east": {
-      "model": "paintedplanks:block/purple_wood_wall_sign",
-      "y": 90
-    },
-    "facing=north": {
-      "model": "paintedplanks:block/purple_wood_wall_sign"
-    },
-    "facing=south": {
-      "model": "paintedplanks:block/purple_wood_wall_sign",
-      "y": 180
-    },
-    "facing=west": {
-      "model": "paintedplanks:block/purple_wood_wall_sign",
-      "y": 270
+    "": {
+      "model": "paintedplanks:block/purple_wood_sign"
     }
   }
 }

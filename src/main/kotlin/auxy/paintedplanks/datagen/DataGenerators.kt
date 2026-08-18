@@ -1,6 +1,9 @@
 package auxy.paintedplanks.datagen
 
+import net.minecraft.data.loot.LootTableProvider
 import net.minecraft.world.item.DyeColor
+import net.minecraft.world.level.storage.loot.parameters.LootContextParamSet
+import net.minecraft.world.level.storage.loot.parameters.LootContextParamSets
 import net.neoforged.bus.api.SubscribeEvent
 import net.neoforged.fml.common.EventBusSubscriber
 import net.neoforged.neoforge.data.event.GatherDataEvent
@@ -19,13 +22,31 @@ object DataGenerators {
         val output = generator.packOutput
         val lookupProvider = event.lookupProvider
         val existingFileHelper = event.existingFileHelper
+        val blockTagsProvider = ModBlockTagsProvider(output, lookupProvider, existingFileHelper)
+
 
         println("Outputting files to ${output.outputFolder}")
 
         generator.addProvider(
             event.includeServer(),
-            ModBlockTagsProvider(output, lookupProvider, existingFileHelper)
+            blockTagsProvider,
         )
+
+        generator.addProvider(
+            event.includeServer(),
+            ModItemTagsProvider(output, lookupProvider, blockTagsProvider.contentsGetter(), existingFileHelper)
+        )
+
+        generator.addProvider(
+            event.includeServer(),
+            LootTableProvider(
+                output,
+                setOf(),
+                listOf(LootTableProvider.SubProviderEntry(::ModBlockLootTables, LootContextParamSets.BLOCK)),
+                lookupProvider
+            )
+        )
+
 
         val mainResourcesRoot = output.outputFolder.parent.parent.resolve("main/resources")
         val generatedResourcesRoot = output.outputFolder
